@@ -113,6 +113,7 @@ export function AlbumCoverConverter() {
 
         {convertedImage && (
           <div className="space-y-4">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={convertedImage}
               alt="Converted album cover"
