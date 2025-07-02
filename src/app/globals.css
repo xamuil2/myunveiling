@@ -85,7 +85,7 @@
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.205 0 0);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.7 0.15 240);
+  --primary: oklch(0.55 0.25 15);
   --primary-foreground: oklch(0.98 0 0);
   --secondary: oklch(0.269 0 0);
   --secondary-foreground: oklch(0.985 0 0);
@@ -96,15 +96,15 @@
   --destructive: oklch(0.704 0.191 22.216);
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.7 0.15 240);
-  --chart-1: oklch(0.488 0.243 264.376);
+  --ring: oklch(0.55 0.25 15);
+  --chart-1: oklch(0.488 0.243 15);
   --chart-2: oklch(0.696 0.17 162.48);
   --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-4: oklch(0.627 0.265 15);
   --chart-5: oklch(0.645 0.246 16.439);
   --sidebar: oklch(0.205 0 0);
   --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.7 0.15 240);
+  --sidebar-primary: oklch(0.55 0.25 15);
   --sidebar-primary-foreground: oklch(0.98 0 0);
   --sidebar-accent: oklch(0.269 0 0);
   --sidebar-accent-foreground: oklch(0.985 0 0);
@@ -220,17 +220,17 @@
   padding-bottom: 0.1em;
 }
 
-/* Enhanced version for dark mode */
+/* Enhanced version for dark mode with blood red */
 .dark .gradient-text {
   background: linear-gradient(to bottom, 
-    #93c5fd, 
-    #60a5fa, 
-    #3b82f6
+    #dc2626, 
+    #b91c1c, 
+    #991b1b
   );
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  color: #60a5fa; /* fallback */
+  color: #dc2626; /* fallback */
   line-height: 1.1;
   padding-bottom: 0.1em;
 }
@@ -256,15 +256,15 @@
 
 .dark .gradient-text-backup {
   background: linear-gradient(-45deg, 
-    #f9fafb, 
-    #60a5fa, 
-    #f9fafb, 
-    #60a5fa, 
-    #818cf8,
-    #60a5fa,
-    #f9fafb
+    #1f2937, 
+    #dc2626, 
+    #1f2937, 
+    #dc2626, 
+    #b91c1c,
+    #dc2626,
+    #1f2937
   );
-  color: #60a5fa;
+  color: #dc2626;
 }
 
 /* Smooth scroll behavior */
@@ -394,7 +394,7 @@ html {
 }
 
 .dark .landing-title-glow {
-  text-shadow: 0 2px 8px rgba(96, 165, 250, 0.3);
+  text-shadow: 0 2px 8px rgba(220, 38, 38, 0.3);
 }
 
 /* Landing section animations that avoid hydration issues */
