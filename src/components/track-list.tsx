@@ -25,42 +25,42 @@ export function TrackList({ tracks }: TrackListProps) {
   };
 
   return (
-    <Card className="p-6">
-      <h2 className="text-2xl font-bold mb-6">Tracks</h2>
-      <div className="space-y-2">
+    <Card className="p-4 sm:p-6">
+      <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">Tracks</h2>
+      <div className="space-y-1 sm:space-y-2">
         {tracks.map((track, index) => (
           <div
             key={track.id}
-            className={`flex items-center justify-between p-4 rounded-lg transition-all duration-200 cursor-pointer track-row-hover ${
+            className={`flex items-center justify-between p-3 sm:p-4 rounded-lg transition-all duration-200 cursor-pointer track-row-hover ${
               state.currentTrack?.id === track.id
                 ? "bg-primary/10 border border-primary/20"
                 : "hover:bg-muted/50"
             }`}
             onClick={() => handleTrackClick(track)}
           >
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-3 sm:space-x-4 min-w-0 flex-1">
               <Button
                 variant={state.currentTrack?.id === track.id ? "default" : "ghost"}
                 size="sm"
-                className="w-10 h-10 rounded-full"
+                className="w-8 h-8 sm:w-10 sm:h-10 rounded-full flex-shrink-0"
                 onClick={(e) => {
                   e.stopPropagation();
                   handleTrackClick(track);
                 }}
               >
                 {state.currentTrack?.id === track.id && state.isPlaying ? (
-                  <Pause className="w-4 h-4" />
+                  <Pause className="w-3 h-3 sm:w-4 sm:h-4" />
                 ) : (
-                  <Play className="w-4 h-4" />
+                  <Play className="w-3 h-3 sm:w-4 sm:h-4" />
                 )}
               </Button>
-              <div>
-                <div className="flex items-center space-x-3">
-                  <span className="text-sm text-muted-foreground font-mono w-6">
+              <div className="min-w-0 flex-1">
+                <div className="flex items-center space-x-2 sm:space-x-3">
+                  <span className="text-xs sm:text-sm text-muted-foreground font-mono w-4 sm:w-6 flex-shrink-0">
                     {(index + 1).toString().padStart(2, "0")}
                   </span>
-                  <div>
-                    <h3 className={`font-medium ${
+                  <div className="min-w-0">
+                    <h3 className={`font-medium text-sm sm:text-base truncate ${
                       state.currentTrack?.id === track.id ? "text-primary" : ""
                     }`}>
                       {track.title}
@@ -69,7 +69,7 @@ export function TrackList({ tracks }: TrackListProps) {
                 </div>
               </div>
             </div>
-            <div className="text-sm text-muted-foreground font-mono">
+            <div className="text-xs sm:text-sm text-muted-foreground font-mono flex-shrink-0">
               {track.duration}
             </div>
           </div>
