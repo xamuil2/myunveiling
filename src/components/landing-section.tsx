@@ -37,9 +37,9 @@ export function LandingSection({ onContinue }: LandingSectionProps) {
         {/* Artistic Statement / Quote */}
         <div className="mb-12 max-w-3xl mx-auto landing-animate-delay-3">
           <blockquote className="text-lg md:text-xl text-muted-foreground leading-relaxed italic mb-4 hover:text-foreground/80 transition-colors duration-500">
-            "Artworks...are not there to save us or perfect us (or damn or
+            &quot;Artworks...are not there to save us or perfect us (or damn or
 corrupt us), but rather to complicate things, to create more complex nervous systems no longer subservient to the debilitating effects of
-clichés, to show and release the possibilities of life."
+clichés, to show and release the possibilities of life.&quot;
           </blockquote>
           <cite className="text-sm text-muted-foreground/80">— John Rajchman</cite>
           

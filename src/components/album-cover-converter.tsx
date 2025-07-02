@@ -126,7 +126,7 @@ export function AlbumCoverConverter() {
               Download Album Cover
             </Button>
             <p className="text-xs text-muted-foreground">
-              Save this as "album-cover.jpg" in your public folder.
+              Save this as &quot;album-cover.jpg&quot; in your public folder.
             </p>
           </div>
         )}

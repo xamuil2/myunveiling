@@ -1,6 +1,6 @@
 "use client";
 
-import React, { createContext, useContext, useReducer, useRef, useEffect } from 'react';
+import React, { createContext, useContext, useReducer, useRef, useEffect, useCallback } from 'react';
 import { Track, album } from '@/lib/music-data';
 
 interface PlayerState {
@@ -71,10 +71,10 @@ export function PlayerProvider({ children }: { children: React.ReactNode }) {
   const [state, dispatch] = useReducer(playerReducer, initialState);
   const audioRef = useRef<HTMLAudioElement>(null);
 
-  const getCurrentTrackIndex = () => {
+  const getCurrentTrackIndex = useCallback(() => {
     if (!state.currentTrack) return -1;
     return album.tracks.findIndex(track => track.id === state.currentTrack?.id);
-  };
+  }, [state.currentTrack]);
 
   const canGoNext = getCurrentTrackIndex() < album.tracks.length - 1;
   const canGoPrevious = getCurrentTrackIndex() > 0;
@@ -177,7 +177,7 @@ export function PlayerProvider({ children }: { children: React.ReactNode }) {
       audio.removeEventListener('canplay', handleCanPlay);
       audio.removeEventListener('ended', handleEnded);
     };
-  }, [canGoNext]);
+  }, [canGoNext, getCurrentTrackIndex]);
 
   return (
     <PlayerContext.Provider value={{

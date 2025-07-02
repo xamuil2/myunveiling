@@ -12,11 +12,12 @@ export function ScrollReveal({ children, className = "", delay = 0 }: ScrollReve
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const currentRef = ref.current;
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting && ref.current) {
+        if (entry.isIntersecting && currentRef) {
           setTimeout(() => {
-            ref.current?.classList.add('scroll-reveal-visible');
+            currentRef?.classList.add('scroll-reveal-visible');
           }, delay);
         }
       },
@@ -26,13 +27,13 @@ export function ScrollReveal({ children, className = "", delay = 0 }: ScrollReve
       }
     );
 
-    if (ref.current) {
-      observer.observe(ref.current);
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, [delay]);
